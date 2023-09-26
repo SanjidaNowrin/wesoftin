@@ -21,17 +21,19 @@ function Users() {
 
   return (
     <div>
-      <h1 className="text-3xl text-center font-semibold mt-6">All Users</h1>
+      <h1 className="mt-6 text-3xl font-semibold text-center">All Users</h1>
 
-      <div className="container mx-auto p-3">
-        <input
-          type="text"
-          placeholder="Search users..."
-          value={searchQuery}
-          onChange={handleSearchInputChange}
-          className="w-full p-2 border rounded-md shadow-md mb-4 mt-4"
-        />
-        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+      <div className="container p-3 mx-auto">
+        <div className="text-center">
+          <input
+            type="text"
+            placeholder="Search users..."
+            value={searchQuery}
+            onChange={handleSearchInputChange}
+            className="w-1/2 p-2 mx-auto mt-4 mb-4 border rounded-md shadow-md sm:w-1/3"
+          />
+        </div>
+        <div className="grid grid-cols-1 gap-5 mt-5 md:grid-cols-2 lg:grid-cols-3">
           {filteredUsers.map((user) => (
             <User key={user.id} user={user} />
           ))}
